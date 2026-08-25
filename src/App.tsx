@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
+import MobileBottomNav from '@/components/layout/MobileBottomNav';
 import ScrollToTop from '@/components/ScrollToTop';
 import AtmosphericBackground from '@/components/ui/AtmosphericBackground';
 import { ThemeProvider } from '@/context/ThemeContext';
@@ -13,7 +14,7 @@ export default function App() {
       <BrowserRouter>
         <ScrollToTop />
         <AtmosphericBackground />
-        <div className="relative flex min-h-screen flex-col bg-transparent text-ink-900 font-sans selection:bg-accent-400 selection:text-white">
+        <div className="relative flex min-h-screen flex-col bg-transparent text-ink-900 font-sans selection:bg-accent-400 selection:text-white pb-16 md:pb-0">
           <Header />
           <main className="flex-1">
             <Routes>
@@ -23,6 +24,7 @@ export default function App() {
             </Routes>
           </main>
           <Footer />
+          <MobileBottomNav />
         </div>
       </BrowserRouter>
     </ThemeProvider>

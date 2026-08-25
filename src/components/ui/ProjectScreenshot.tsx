@@ -208,6 +208,8 @@ export default function ProjectScreenshot({
               <img
                 src={activeSrc}
                 alt={alt}
+                loading="lazy"
+                decoding="async"
                 referrerPolicy="no-referrer"
                 onLoad={() => setHasLoaded(true)}
                 onError={handleError}

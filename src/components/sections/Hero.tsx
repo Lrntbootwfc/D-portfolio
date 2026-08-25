@@ -145,6 +145,7 @@ export default function Hero() {
                     <img
                       src={currentPhotoSrc}
                       alt={profile.name}
+                      decoding="async"
                       onLoad={() => setPhotoLoaded(true)}
                       onError={handleImageError}
                       className={`h-full w-full object-cover object-center transition-all duration-700 ${
