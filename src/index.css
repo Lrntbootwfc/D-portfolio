@@ -1,0 +1,685 @@
+@import "tailwindcss";
+
+/* ==========================================================================
+   CSS CUSTOM PROPERTIES: 4 INTERCHANGEABLE THEMES
+   ========================================================================== */
+
+:root,
+[data-theme="pink-neumorphic"],
+[data-theme="plum"] {
+  /* THEME 1: SOFT NEUMORPHIC PINK (LIGHT MODE) */
+  --bg-base: #EEF2F6;
+  --bg-supporting: #E2E8F0;
+  --bg-deep: #D8E2EC;
+  --bg-surface: #F5F8FB;
+
+  --text-primary: #1E293B;
+  --text-heading: #0F172A;
+  --text-body: #334155;
+  --text-muted: #64748B;
+  --text-subtle: #8A99AD;
+  --text-faint: #B0BCCB;
+
+  /* Accent 1: Vibrant Hot Pink | Accent 2: Bright Rose */
+  --accent-1: #FF2B79;
+  --accent-2: #FF5E97;
+  --accent-1-rgb: 255, 43, 121;
+  --accent-2-rgb: 255, 94, 151;
+
+  --gradient-primary: linear-gradient(135deg, #FF2B79 0%, #FF1475 100%);
+  --gradient-text: linear-gradient(135deg, #FF2B79 0%, #E11D48 65%, #1E293B 100%);
+  --gradient-badge: linear-gradient(135deg, rgba(255, 43, 121, 0.12) 0%, rgba(255, 94, 151, 0.12) 100%);
+
+  /* Authentic Neumorphic & Soft Glass System (Light) */
+  --glass-bg: rgba(238, 242, 246, 0.9);
+  --glass-card-bg: #EEF2F6;
+  --glass-subtle-bg: #E6ECF3;
+  --glass-pill-bg: #EEF2F6;
+  --glass-nav-bg: rgba(238, 242, 246, 0.88);
+  --glass-input-bg: #E6ECF3;
+  --glass-bg-hover: #F5F8FB;
+
+  --glass-border: rgba(255, 255, 255, 0.95);
+  --glass-border-subtle: rgba(255, 255, 255, 0.8);
+  --glass-border-hover: rgba(255, 43, 121, 0.45);
+  --glass-input-border: rgba(205, 217, 230, 0.8);
+  --glass-highlight: rgba(255, 255, 255, 0.98);
+  --glass-glow: rgba(255, 43, 121, 0.35);
+
+  /* Neumorphic Shadows (Light Mode) */
+  --neu-shadow-card: 10px 10px 24px rgba(166, 180, 200, 0.5), -10px -10px 24px #FFFFFF, inset 1px 1px 1px var(--glass-highlight);
+  --neu-shadow-card-hover: 14px 14px 32px rgba(166, 180, 200, 0.62), -14px -14px 32px #FFFFFF, 0 0 24px var(--glass-glow), inset 1px 1px 1px var(--glass-highlight);
+  --neu-shadow-panel: 8px 8px 22px rgba(166, 180, 200, 0.5), -8px -8px 22px #FFFFFF, inset 1px 1px 1px var(--glass-highlight);
+  --neu-shadow-pill: 4px 4px 10px rgba(166, 180, 200, 0.42), -4px -4px 10px #FFFFFF;
+  --neu-shadow-pill-hover: 6px 6px 14px rgba(166, 180, 200, 0.52), -6px -6px 14px #FFFFFF;
+  --neu-shadow-input: inset 3px 3px 6px rgba(166, 180, 200, 0.45), inset -3px -3px 6px #FFFFFF;
+  --neu-shadow-input-focus: inset 2px 2px 4px rgba(166, 180, 200, 0.3), inset -2px -2px 4px #FFFFFF, 0 0 0 3px rgba(255, 43, 121, 0.2);
+  --neu-shadow-nav: 0 6px 20px rgba(166, 180, 200, 0.3);
+  --neu-btn-shadow: 0 8px 22px rgba(255, 43, 121, 0.38), 0 2px 6px rgba(255, 43, 121, 0.22);
+  --neu-btn-shadow-hover: 0 12px 28px rgba(255, 43, 121, 0.48), 0 4px 10px rgba(255, 43, 121, 0.28);
+
+  /* Ambient Environmental Lighting */
+  --ambient-orb-1: rgba(255, 43, 121, 0.08);
+  --ambient-orb-2: rgba(255, 94, 151, 0.06);
+  --ambient-mesh-1: rgba(255, 43, 121, 0.05);
+  --ambient-mesh-2: rgba(255, 120, 165, 0.05);
+  --ambient-blur: 160px;
+}
+
+[data-theme="pink-dark-neumorphic"] {
+  /* THEME 2: DARK NEUMORPHIC PINK (DARK MODE WITH EMBOSSED NEUMORPHISM & GRADIENTS) */
+  --bg-base: #14161D;
+  --bg-supporting: #1A1D27;
+  --bg-deep: #0D0F14;
+  --bg-surface: #202431;
+
+  --text-primary: #F8FAFC;
+  --text-heading: #FFFFFF;
+  --text-body: #E2E8F0;
+  --text-muted: #94A3B8;
+  --text-subtle: #64748B;
+  --text-faint: #475569;
+
+  /* Accent 1: Vibrant Hot Pink | Accent 2: Neon Rose */
+  --accent-1: #FF2B79;
+  --accent-2: #FF66A1;
+  --accent-1-rgb: 255, 43, 121;
+  --accent-2-rgb: 255, 102, 161;
+
+  --gradient-primary: linear-gradient(135deg, #FF2B79 0%, #FF1475 100%);
+  --gradient-text: linear-gradient(135deg, #FF2B79 0%, #FF66A1 60%, #FFFFFF 100%);
+  --gradient-badge: linear-gradient(135deg, rgba(255, 43, 121, 0.2) 0%, rgba(255, 102, 161, 0.2) 100%);
+
+  /* Dark Neumorphic Surfaces */
+  --glass-bg: rgba(26, 29, 39, 0.75);
+  --glass-card-bg: #181B24;
+  --glass-subtle-bg: #14161D;
+  --glass-pill-bg: #181B24;
+  --glass-nav-bg: rgba(20, 22, 29, 0.85);
+  --glass-input-bg: #12141A;
+  --glass-bg-hover: #1E222D;
+
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-border-subtle: rgba(255, 255, 255, 0.05);
+  --glass-border-hover: rgba(255, 43, 121, 0.45);
+  --glass-input-border: rgba(255, 255, 255, 0.08);
+  --glass-highlight: rgba(255, 255, 255, 0.12);
+  --glass-glow: rgba(255, 43, 121, 0.4);
+
+  /* Dark Neumorphic 3D Dual Shadows */
+  --neu-shadow-card: 10px 10px 24px #0A0B0F, -8px -8px 20px rgba(255, 255, 255, 0.05), inset 1px 1px 1px var(--glass-highlight);
+  --neu-shadow-card-hover: 14px 14px 30px #08090C, -10px -10px 24px rgba(255, 255, 255, 0.07), 0 0 24px var(--glass-glow), inset 1px 1px 1px var(--glass-highlight);
+  --neu-shadow-panel: 8px 8px 22px #0A0B0F, -6px -6px 18px rgba(255, 255, 255, 0.05), inset 1px 1px 1px var(--glass-highlight);
+  --neu-shadow-pill: 4px 4px 10px #0A0B0F, -4px -4px 10px rgba(255, 255, 255, 0.04);
+  --neu-shadow-pill-hover: 6px 6px 14px #0A0B0F, -5px -5px 12px rgba(255, 255, 255, 0.06);
+  --neu-shadow-input: inset 3px 3px 7px #0A0B0F, inset -3px -3px 7px rgba(255, 255, 255, 0.04);
+  --neu-shadow-input-focus: inset 2px 2px 5px #0A0B0F, inset -2px -2px 5px rgba(255, 255, 255, 0.04), 0 0 0 3px rgba(255, 43, 121, 0.3);
+  --neu-shadow-nav: 0 6px 20px rgba(0, 0, 0, 0.4);
+  --neu-btn-shadow: 0 8px 24px rgba(255, 43, 121, 0.45), 0 2px 6px rgba(255, 43, 121, 0.25);
+  --neu-btn-shadow-hover: 0 12px 30px rgba(255, 43, 121, 0.6), 0 4px 10px rgba(255, 43, 121, 0.35);
+
+  /* Dark Ambient Environmental Lighting */
+  --ambient-orb-1: rgba(255, 43, 121, 0.16);
+  --ambient-orb-2: rgba(255, 102, 161, 0.12);
+  --ambient-mesh-1: rgba(255, 43, 121, 0.12);
+  --ambient-mesh-2: rgba(255, 60, 140, 0.1);
+  --ambient-blur: 160px;
+}
+
+[data-theme="navy"] {
+  /* THEME 3: DEEP NAVY + CORAL (DARK NEUMORPHIC GLASS) */
+  --bg-base: #0F1726;
+  --bg-supporting: #162238;
+  --bg-deep: #080D17;
+  --bg-surface: #1B2B47;
+
+  --text-primary: #F4F2ED;
+  --text-heading: #E8EAEF;
+  --text-body: #C8CFDC;
+  --text-muted: #9FA8B8;
+  --text-subtle: #6D788B;
+  --text-faint: #4A5467;
+
+  /* Accent 1: Soft Blue | Accent 2: Muted Coral */
+  --accent-1: #6D8CFF;
+  --accent-2: #F28B82;
+  --accent-1-rgb: 109, 140, 255;
+  --accent-2-rgb: 242, 139, 130;
+
+  --gradient-primary: linear-gradient(135deg, #6D8CFF 0%, #F28B82 100%);
+  --gradient-text: linear-gradient(135deg, #6D8CFF 0%, #F28B82 60%, #F4F2ED 100%);
+  --gradient-badge: linear-gradient(135deg, rgba(109, 140, 255, 0.18) 0%, rgba(242, 139, 130, 0.18) 100%);
+
+  /* Neumorphic Glass System */
+  --glass-bg: rgba(22, 34, 56, 0.65);
+  --glass-card-bg: #131E31;
+  --glass-subtle-bg: #0F1726;
+  --glass-pill-bg: #131E31;
+  --glass-nav-bg: rgba(15, 23, 38, 0.85);
+  --glass-input-bg: #0B121E;
+  --glass-bg-hover: #19273F;
+
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-border-subtle: rgba(255, 255, 255, 0.05);
+  --glass-border-hover: rgba(109, 140, 255, 0.45);
+  --glass-input-border: rgba(255, 255, 255, 0.08);
+  --glass-highlight: rgba(255, 255, 255, 0.12);
+  --glass-glow: rgba(109, 140, 255, 0.35);
+
+  /* Deep Navy Neumorphic 3D Dual Shadows */
+  --neu-shadow-card: 10px 10px 24px #060A10, -8px -8px 20px rgba(109, 140, 255, 0.06), inset 1px 1px 1px var(--glass-highlight);
+  --neu-shadow-card-hover: 14px 14px 30px #04070B, -10px -10px 24px rgba(109, 140, 255, 0.09), 0 0 24px var(--glass-glow), inset 1px 1px 1px var(--glass-highlight);
+  --neu-shadow-panel: 8px 8px 22px #060A10, -6px -6px 18px rgba(109, 140, 255, 0.06), inset 1px 1px 1px var(--glass-highlight);
+  --neu-shadow-pill: 4px 4px 10px #060A10, -4px -4px 10px rgba(109, 140, 255, 0.05);
+  --neu-shadow-pill-hover: 6px 6px 14px #060A10, -5px -5px 12px rgba(109, 140, 255, 0.08);
+  --neu-shadow-input: inset 3px 3px 7px #060A10, inset -3px -3px 7px rgba(109, 140, 255, 0.05);
+  --neu-shadow-input-focus: inset 2px 2px 5px #060A10, inset -2px -2px 5px rgba(109, 140, 255, 0.05), 0 0 0 3px rgba(109, 140, 255, 0.3);
+  --neu-shadow-nav: 0 6px 20px rgba(0, 0, 0, 0.4);
+  --neu-btn-shadow: 0 8px 24px rgba(109, 140, 255, 0.38), 0 2px 6px rgba(242, 139, 130, 0.22);
+  --neu-btn-shadow-hover: 0 12px 30px rgba(109, 140, 255, 0.5), 0 4px 10px rgba(242, 139, 130, 0.3);
+
+  /* Ambient Environmental Lighting */
+  --ambient-orb-1: rgba(109, 140, 255, 0.16);
+  --ambient-orb-2: rgba(242, 139, 130, 0.12);
+  --ambient-mesh-1: rgba(109, 140, 255, 0.14);
+  --ambient-mesh-2: rgba(242, 139, 130, 0.12);
+  --ambient-blur: 160px;
+}
+
+[data-theme="navy-light"] {
+  /* THEME 4: NAVY & CORAL (LIGHT MODE) */
+  --bg-base: #F0F4F9;
+  --bg-supporting: #E2E9F3;
+  --bg-deep: #D5DFED;
+  --bg-surface: #F8FAFC;
+
+  --text-primary: #0F172A;
+  --text-heading: #090E17;
+  --text-body: #1E293B;
+  --text-muted: #475569;
+  --text-subtle: #64748B;
+  --text-faint: #94A3B8;
+
+  /* Accent 1: Ice Navy Blue | Accent 2: Vibrant Coral */
+  --accent-1: #3B66FF;
+  --accent-2: #FF5A4E;
+  --accent-1-rgb: 59, 102, 255;
+  --accent-2-rgb: 255, 90, 78;
+
+  --gradient-primary: linear-gradient(135deg, #3B66FF 0%, #FF5A4E 100%);
+  --gradient-text: linear-gradient(135deg, #3B66FF 0%, #FF5A4E 65%, #0F172A 100%);
+  --gradient-badge: linear-gradient(135deg, rgba(59, 102, 255, 0.12) 0%, rgba(255, 90, 78, 0.12) 100%);
+
+  /* Light Neumorphic Surfaces */
+  --glass-bg: rgba(240, 244, 249, 0.9);
+  --glass-card-bg: #F0F4F9;
+  --glass-subtle-bg: #E7EEF7;
+  --glass-pill-bg: #F0F4F9;
+  --glass-nav-bg: rgba(240, 244, 249, 0.88);
+  --glass-input-bg: #E7EEF7;
+  --glass-bg-hover: #F8FAFC;
+
+  --glass-border: rgba(255, 255, 255, 0.95);
+  --glass-border-subtle: rgba(255, 255, 255, 0.8);
+  --glass-border-hover: rgba(59, 102, 255, 0.45);
+  --glass-input-border: rgba(200, 214, 230, 0.85);
+  --glass-highlight: rgba(255, 255, 255, 0.98);
+  --glass-glow: rgba(59, 102, 255, 0.25);
+
+  /* Light Dual Shadows */
+  --neu-shadow-card: 10px 10px 24px rgba(160, 178, 202, 0.48), -10px -10px 24px #FFFFFF, inset 1px 1px 1px var(--glass-highlight);
+  --neu-shadow-card-hover: 14px 14px 32px rgba(160, 178, 202, 0.6), -14px -14px 32px #FFFFFF, 0 0 20px var(--glass-glow), inset 1px 1px 1px var(--glass-highlight);
+  --neu-shadow-panel: 8px 8px 22px rgba(160, 178, 202, 0.48), -8px -8px 22px #FFFFFF, inset 1px 1px 1px var(--glass-highlight);
+  --neu-shadow-pill: 4px 4px 10px rgba(160, 178, 202, 0.4), -4px -4px 10px #FFFFFF;
+  --neu-shadow-pill-hover: 6px 6px 14px rgba(160, 178, 202, 0.5), -6px -6px 14px #FFFFFF;
+  --neu-shadow-input: inset 3px 3px 6px rgba(160, 178, 202, 0.45), inset -3px -3px 6px #FFFFFF;
+  --neu-shadow-input-focus: inset 2px 2px 4px rgba(160, 178, 202, 0.3), inset -2px -2px 4px #FFFFFF, 0 0 0 3px rgba(59, 102, 255, 0.2);
+  --neu-shadow-nav: 0 6px 20px rgba(160, 178, 202, 0.3);
+  --neu-btn-shadow: 0 8px 22px rgba(59, 102, 255, 0.35), 0 2px 6px rgba(255, 90, 78, 0.2);
+  --neu-btn-shadow-hover: 0 12px 28px rgba(59, 102, 255, 0.45), 0 4px 10px rgba(255, 90, 78, 0.28);
+
+  /* Ambient Environmental Lighting */
+  --ambient-orb-1: rgba(59, 102, 255, 0.08);
+  --ambient-orb-2: rgba(255, 90, 78, 0.06);
+  --ambient-mesh-1: rgba(59, 102, 255, 0.06);
+  --ambient-mesh-2: rgba(255, 90, 78, 0.05);
+  --ambient-blur: 160px;
+}
+
+@theme {
+  /* Dynamic Palette Mappings mapped to Theme CSS variables */
+  --color-ink-900: var(--text-primary);
+  --color-ink-800: var(--text-heading);
+  --color-ink-700: var(--text-body);
+  --color-ink-600: var(--text-muted);
+  --color-ink-500: var(--text-subtle);
+  --color-ink-400: var(--text-faint);
+  --color-ink: var(--text-primary);
+
+  --color-paper-50: var(--bg-deep);
+  --color-paper-100: var(--bg-base);
+  --color-paper-200: var(--bg-supporting);
+  --color-paper-300: var(--bg-surface);
+  --color-paper-400: rgba(255, 255, 255, 0.12);
+  --color-paper-500: rgba(255, 255, 255, 0.2);
+  --color-paper: var(--bg-base);
+
+  --color-accent-400: var(--accent-1);
+  --color-accent-500: var(--accent-2);
+  --color-accent: var(--accent-1);
+
+  /* Typography */
+  --font-display: "Plus Jakarta Sans", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-sans: "Inter", "Plus Jakarta Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: var(--bg-base);
+    color: var(--text-primary);
+    color-scheme: light;
+    transition: background-color 0.4s ease, color 0.4s ease;
+  }
+
+  body {
+    background-color: var(--bg-base);
+    color: var(--text-primary);
+    font-family: "Inter", "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+    font-feature-settings: 'ss01', 'cv01', 'cv03';
+    min-height: 100vh;
+    overflow-x: hidden;
+    letter-spacing: -0.01em;
+    transition: background-color 0.4s ease, color 0.4s ease;
+  }
+
+  ::selection {
+    background-color: var(--accent-1);
+    color: #FFFFFF;
+  }
+
+  :focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--bg-base), 0 0 0 4px var(--accent-1);
+  }
+}
+
+/* Custom Typography & Utility Sizes */
+.font-display {
+  font-family: "Plus Jakarta Sans", "Inter", -apple-system, sans-serif;
+}
+.font-mono {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+}
+.font-sans {
+  font-family: "Inter", "Plus Jakarta Sans", system-ui, sans-serif;
+}
+
+.text-display-2xl {
+  font-size: clamp(2.75rem, 6.5vw, 5.25rem);
+  line-height: 1.02;
+  letter-spacing: -0.035em;
+  font-weight: 700;
+}
+.text-display-xl {
+  font-size: clamp(2.15rem, 4.8vw, 3.75rem);
+  line-height: 1.06;
+  letter-spacing: -0.03em;
+  font-weight: 600;
+}
+.text-display-lg {
+  font-size: clamp(1.75rem, 3.4vw, 2.75rem);
+  line-height: 1.12;
+  letter-spacing: -0.025em;
+  font-weight: 600;
+}
+.text-display-md {
+  font-size: clamp(1.35rem, 2.4vw, 1.85rem);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  font-weight: 600;
+}
+
+.font-300 { font-weight: 300; }
+.font-400 { font-weight: 400; }
+.font-500 { font-weight: 500; }
+.font-600 { font-weight: 600; }
+.font-700 { font-weight: 700; }
+.font-800 { font-weight: 800; }
+
+.max-w-content {
+  max-width: 80rem;
+}
+.max-w-prose {
+  max-width: 44rem;
+}
+
+.container-content {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 80rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+@media (min-width: 640px) {
+  .container-content {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-content {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+.section-padding {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+@media (min-width: 640px) {
+  .section-padding {
+    padding-top: 8.5rem;
+    padding-bottom: 8.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-padding {
+    padding-top: 10.5rem;
+    padding-bottom: 10.5rem;
+  }
+}
+
+/* ==========================================================================
+   DYNAMIC GRADIENTS & ACCENTS (SIGNATURE PINK NEUMORPHISM)
+   ========================================================================== */
+
+.text-gradient-aurora {
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transition: all 0.4s ease;
+}
+
+.bg-gradient-aurora {
+  background: var(--gradient-primary) !important;
+  color: #FFFFFF !important;
+  box-shadow: var(--neu-btn-shadow);
+  transition: all 0.3s ease;
+}
+
+.bg-gradient-aurora:hover {
+  opacity: 0.95;
+  box-shadow: var(--neu-btn-shadow-hover);
+  transform: translateY(-1px);
+}
+
+.aurora-badge {
+  background: var(--gradient-badge);
+  border: 1px solid rgba(var(--accent-1-rgb), 0.35);
+  box-shadow: 0 2px 10px rgba(var(--accent-1-rgb), 0.15);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+.text-pretty {
+  text-wrap: pretty;
+}
+
+/* ==========================================================================
+   AUTHENTIC NEUMORPHISM & SOFT GLASS UI SURFACES
+   ========================================================================== */
+
+.glass-panel {
+  background: var(--glass-card-bg);
+  backdrop-filter: blur(20px) saturate(135%);
+  -webkit-backdrop-filter: blur(20px) saturate(135%);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--neu-shadow-panel);
+  transition: background 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.glass-nav {
+  background: var(--glass-nav-bg);
+  backdrop-filter: blur(24px) saturate(140%);
+  -webkit-backdrop-filter: blur(24px) saturate(140%);
+  border-bottom: 1px solid var(--glass-border);
+  box-shadow: var(--neu-shadow-nav);
+  transition: background 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.glass-card {
+  background: var(--glass-card-bg);
+  backdrop-filter: blur(20px) saturate(135%);
+  -webkit-backdrop-filter: blur(20px) saturate(135%);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--neu-shadow-card);
+  transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card:hover {
+  background: var(--glass-bg-hover);
+  border-color: var(--glass-border-hover);
+  box-shadow: var(--neu-shadow-card-hover);
+}
+
+.glass-pill {
+  background: var(--glass-pill-bg);
+  backdrop-filter: blur(14px) saturate(125%);
+  -webkit-backdrop-filter: blur(14px) saturate(125%);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--neu-shadow-pill);
+  transition: all 0.3s ease;
+}
+
+.glass-pill:hover {
+  background: var(--glass-bg-hover);
+  border-color: var(--glass-border-hover);
+  box-shadow: var(--neu-shadow-pill-hover);
+}
+
+.glass-input {
+  background: var(--glass-input-bg);
+  color: var(--text-primary);
+  border: 1px solid var(--glass-input-border);
+  box-shadow: var(--neu-shadow-input);
+  transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.glass-input:focus {
+  background: var(--glass-card-bg);
+  border-color: var(--accent-1);
+  box-shadow: var(--neu-shadow-input-focus);
+}
+
+.card-ambient-hover {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+.card-ambient-hover:hover {
+  border-color: var(--glass-border-hover);
+  box-shadow: var(--neu-shadow-card-hover);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-base);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--bg-surface);
+  border-radius: 999px;
+  border: 2px solid var(--bg-base);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--glass-border-hover);
+}
+
+/* Reveal-on-scroll */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes fadeUp {
+  0% { opacity: 0; transform: translateY(16px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes floatSlower {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes drift {
+  0%, 100% { transform: translate(0, 0); }
+  33% { transform: translate(6px, -5px); }
+  66% { transform: translate(-5px, 3px); }
+}
+
+@keyframes rotateSlow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes pulseSoft {
+  0%, 100% { opacity: 0.15; transform: scale(1); }
+  50% { opacity: 0.35; transform: scale(1.04); }
+}
+
+@keyframes drawLine {
+  0%, 100% { transform: scaleX(0.35); opacity: 0.25; }
+  50% { transform: scaleX(1); opacity: 0.7; }
+}
+
+/* Background Ambient Drift Keyframes */
+@keyframes ambientDrift1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(30px, -25px) scale(1.05); }
+}
+
+@keyframes ambientDrift2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-25px, 20px) scale(1.06); }
+}
+
+@keyframes ambientPulse {
+  0%, 100% { opacity: 0.1; transform: scale(1); }
+  50% { opacity: 0.16; transform: scale(1.08); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-fade-in-slow {
+  animation: fadeIn 0.9s ease-out forwards;
+}
+
+.animate-marquee {
+  animation: marquee 35s linear infinite;
+}
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+.animate-float-slow {
+  animation: floatSlow 8s ease-in-out infinite;
+}
+
+.animate-float-slower {
+  animation: floatSlower 12s ease-in-out infinite;
+}
+
+.animate-drift {
+  animation: drift 18s ease-in-out infinite;
+}
+
+.animate-rotate-slow {
+  animation: rotateSlow 32s linear infinite;
+}
+
+.animate-pulse-soft {
+  animation: pulseSoft 6s ease-in-out infinite;
+}
+
+.animate-draw-line {
+  animation: drawLine 4s ease-in-out infinite;
+}
+
+.animate-ambient-drift-1 {
+  animation: ambientDrift1 28s ease-in-out infinite;
+}
+
+.animate-ambient-drift-2 {
+  animation: ambientDrift2 32s ease-in-out infinite;
+}
+
+.animate-ambient-pulse {
+  animation: ambientPulse 16s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-fade-in,
+  .animate-fade-up,
+  .animate-fade-in-slow,
+  .animate-marquee,
+  .animate-float-slow,
+  .animate-float-slower,
+  .animate-drift,
+  .animate-rotate-slow,
+  .animate-pulse-soft,
+  .animate-draw-line,
+  .animate-ambient-drift-1,
+  .animate-ambient-drift-2,
+  .animate-ambient-pulse {
+    animation: none !important;
+  }
+}

@@ -1,0 +1,93 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 4 0 R /Resources << /Font << /F1 5 0 R /F2 6 0 R >> >> >>
+endobj
+4 0 obj
+<< /Length 5830 >>
+stream
+0.980 0.980 0.988 rg
+0.0 0.0 612.0 792.0 re f
+0.145 0.388 0.922 rg
+0.0 784.0 612.0 8.0 re f
+1.000 1.000 1.000 rg
+36.0 680.0 540.0 92.0 re f
+0.886 0.910 0.941 RG
+0.75 w
+36.0 680.0 540.0 92.0 re S
+BT /F2 20 Tf 0.059 0.090 0.165 rg 54.0 742.0 Td (DIVYA SHARMA) Tj ET
+BT /F2 10 Tf 0.145 0.388 0.922 rg 54.0 725.0 Td (Software Developer & Digital Solutions Builder) Tj ET
+BT /F1 8.5 Tf 0.278 0.333 0.412 rg 54.0 708.0 Td (B.Tech in Computer Science & Engineering | OIST Bhopal \(2026\) | CGPA: 8.5) Tj ET
+BT /F1 8 Tf 0.392 0.455 0.545 rg 54.0 694.0 Td (Portfolio: https://comic-diary.onrender.com | GitHub: github.com/Lrntbootwfc | LinkedIn: linkedin.com/in/divya-sharma6467) Tj ET
+BT /F2 10.5 Tf 0.059 0.090 0.165 rg 36.0 658.0 Td (TECHNICAL SKILLS) Tj ET
+0.796 0.835 0.882 RG 1 w 36.0 652.0 m 576.0 652.0 l S
+BT /F2 8.5 Tf 0.118 0.161 0.231 rg 46.0 636.0 Td (Core & Languages:) Tj ET
+BT /F1 8.5 Tf 0.200 0.255 0.333 rg 145.0 636.0 Td (Python, JavaScript \(ES6+\), TypeScript, SQL, HTML5, CSS3/Tailwind) Tj ET
+BT /F2 8.5 Tf 0.118 0.161 0.231 rg 46.0 622.0 Td (Frameworks & Web:) Tj ET
+BT /F1 8.5 Tf 0.200 0.255 0.333 rg 145.0 622.0 Td (React.js, FastAPI, Flask, Django, Node.js/Express, Vite, RESTful APIs) Tj ET
+BT /F2 8.5 Tf 0.118 0.161 0.231 rg 46.0 608.0 Td (Data & Analytics:) Tj ET
+BT /F1 8.5 Tf 0.200 0.255 0.333 rg 145.0 608.0 Td (Pandas, NumPy, Scikit-Learn, Power BI, Tableau, MySQL, Neo4j, Excel) Tj ET
+BT /F2 8.5 Tf 0.118 0.161 0.231 rg 46.0 594.0 Td (AI / ML & Tools:) Tj ET
+BT /F1 8.5 Tf 0.200 0.255 0.333 rg 145.0 594.0 Td (CrewAI, Multi-Agent Systems, Knowledge Graphs, Predictive Modeling, Git, VS Code) Tj ET
+BT /F2 10.5 Tf 0.059 0.090 0.165 rg 36.0 576.0 Td (EXPERIENCE & INTERNSHIPS) Tj ET
+0.796 0.835 0.882 RG 1 w 36.0 570.0 m 576.0 570.0 l S
+BT /F2 9.5 Tf 0.059 0.090 0.165 rg 46.0 556.0 Td (Data Analyst Intern  --  Hackveda) Tj ET
+BT /F2 8.5 Tf 0.145 0.388 0.922 rg 460.0 556.0 Td (Aug 2025 - Oct 2025) Tj ET
+BT /F1 8.5 Tf 0.200 0.255 0.333 rg 54.0 543.0 Td (- Analyzed and processed 50,000+ records for the University Insight Portal using Python \(Pandas, NumPy\) and SQL.) Tj ET
+BT /F1 8.5 Tf 0.200 0.255 0.333 rg 54.0 531.0 Td (- Built relational data pipelines in MySQL and Django, optimizing query performance for multi-dimensional dashboards.) Tj ET
+BT /F2 9.5 Tf 0.059 0.090 0.165 rg 46.0 514.0 Td (Frontend Developer Intern  --  Coding Thinkers) Tj ET
+BT /F2 8.5 Tf 0.145 0.388 0.922 rg 460.0 514.0 Td (Jul 2023 - Aug 2023) Tj ET
+BT /F1 8.5 Tf 0.200 0.255 0.333 rg 54.0 501.0 Td (- Developed 5+ responsive, interactive web applications using React.js, JavaScript, HTML5, and CSS3.) Tj ET
+BT /F1 8.5 Tf 0.200 0.255 0.333 rg 54.0 489.0 Td (- Collaborated on reusable UI components, client-side state management, and cross-browser performance tuning.) Tj ET
+BT /F2 10.5 Tf 0.059 0.090 0.165 rg 36.0 469.0 Td (KEY PROJECTS) Tj ET
+0.796 0.835 0.882 RG 1 w 36.0 463.0 m 576.0 463.0 l S
+BT /F2 9.5 Tf 0.059 0.090 0.165 rg 46.0 449.0 Td (AIDRA - Explainable Drug Repurposing Framework) Tj ET
+BT /F1 8 Tf 0.392 0.455 0.545 rg 460.0 449.0 Td (Final Year Capstone | 2025) Tj ET
+BT /F1 8.5 Tf 0.200 0.255 0.333 rg 54.0 436.0 Td (- Designed a deterministic multi-agent research framework using CrewAI, FastAPI, Neo4j, and React.) Tj ET
+BT /F1 8.5 Tf 0.200 0.255 0.333 rg 54.0 424.0 Td (- Implemented graph traversal pipelines querying relational molecular paths across compounds, targets, and diseases.) Tj ET
+BT /F1 8.5 Tf 0.200 0.255 0.333 rg 54.0 412.0 Td (- Enforced strict Pydantic JSON validation producing verifiable biomedical citations and confidence scoring.) Tj ET
+BT /F2 9.5 Tf 0.059 0.090 0.165 rg 46.0 395.0 Td (Comic Diary - AI-Powered Visual Journaling Platform) Tj ET
+BT /F1 8 Tf 0.392 0.455 0.545 rg 460.0 395.0 Td (Live Platform | 2024 - 2025) Tj ET
+BT /F1 8.5 Tf 0.200 0.255 0.333 rg 54.0 382.0 Td (- Built full-stack visual storytelling suite in React, TypeScript, and Tailwind converting daily thoughts into multi-panel comics.) Tj ET
+BT /F1 8.5 Tf 0.200 0.255 0.333 rg 54.0 370.0 Td (- Engineered custom Canvas editor for speech bubble placement, comic panel sequencing, and high-res strip export.) Tj ET
+BT /F1 8.5 Tf 0.200 0.255 0.333 rg 54.0 358.0 Td (- Integrated emotional trajectory analytics and media recommendation engine. Live: https://comic-diary.onrender.com) Tj ET
+BT /F2 9.5 Tf 0.059 0.090 0.165 rg 46.0 341.0 Td (Talent Sentinel - Employee Attrition Predictive Analytics) Tj ET
+BT /F1 8 Tf 0.392 0.455 0.545 rg 460.0 341.0 Td (Predictive Modeling | 2024) Tj ET
+BT /F1 8.5 Tf 0.200 0.255 0.333 rg 54.0 328.0 Td (- Developed machine learning pipeline using Python, Logistic Regression, Flask, and MySQL to forecast workplace turnover risk.) Tj ET
+BT /F1 8.5 Tf 0.200 0.255 0.333 rg 54.0 316.0 Td (- Achieved 82% precision benchmark with feature importance ranking explaining key retention drivers.) Tj ET
+BT /F2 9.5 Tf 0.059 0.090 0.165 rg 46.0 299.0 Td (ORDERMYGIFTNOW - Real-World E-Commerce Storefront) Tj ET
+BT /F1 8 Tf 0.392 0.455 0.545 rg 460.0 299.0 Td (Commercial Web | 2024) Tj ET
+BT /F1 8.5 Tf 0.200 0.255 0.333 rg 54.0 286.0 Td (- Designed responsive UI and customer purchase journey for active commercial gift and custom delivery venture.) Tj ET
+BT /F2 10.5 Tf 0.059 0.090 0.165 rg 36.0 267.0 Td (EDUCATION & ACHIEVEMENTS) Tj ET
+0.796 0.835 0.882 RG 1 w 36.0 261.0 m 576.0 261.0 l S
+BT /F2 9 Tf 0.059 0.090 0.165 rg 46.0 248.0 Td (Bachelor of Technology in Computer Science & Engineering) Tj ET
+BT /F2 8.5 Tf 0.145 0.388 0.922 rg 460.0 248.0 Td (2022 - 2026 | CGPA: 8.5) Tj ET
+BT /F1 8.5 Tf 0.278 0.333 0.412 rg 46.0 236.0 Td (Oriental Institute of Science & Technology \(OIST\), Bhopal, Madhya Pradesh, India) Tj ET
+BT /F1 8.5 Tf 0.200 0.255 0.333 rg 46.0 222.0 Td (Achievements: 350+ Coding Problems Solved on Competitive Platforms | Active Technical Builder) Tj ET
+endstream
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+6 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000251 00000 n 
+0000006133 00000 n 
+0000006230 00000 n 
+trailer
+<< /Size 7 /Root 1 0 R >>
+startxref
+6332
+%%EOF
