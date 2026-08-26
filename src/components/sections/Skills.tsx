@@ -4,8 +4,8 @@ import SectionHeading from '@/components/ui/SectionHeading';
 
 export default function Skills() {
   return (
-    <section id="skills" className="section-padding relative">
-      <div className="container-content relative">
+    <section id="skills" className="section-padding relative w-full max-w-full overflow-hidden">
+      <div className="container-content relative w-full min-w-0">
         <SectionHeading
           eyebrow="SKILLS"
           title={<>Technical Toolkit</>}

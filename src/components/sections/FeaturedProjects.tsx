@@ -15,12 +15,12 @@ export default function FeaturedProjects() {
   const orderMyGiftNow = projects.find((p) => p.slug === 'ordermygiftnow') || projects[3];
 
   return (
-    <section id="work" className="section-padding relative">
+    <section id="work" className="section-padding relative w-full max-w-full overflow-hidden">
       {/* Background ambient lighting */}
-      <div className="pointer-events-none absolute right-[-5%] top-[20%] h-[500px] w-[500px] rounded-full bg-accent-400/5 blur-[150px]" aria-hidden />
-      <div className="pointer-events-none absolute left-[-5%] bottom-[20%] h-[500px] w-[500px] rounded-full bg-accent-500/5 blur-[150px]" aria-hidden />
+      <div className="pointer-events-none absolute right-0 top-[20%] h-[350px] w-[350px] sm:h-[500px] sm:w-[500px] rounded-full bg-accent-400/5 blur-[120px] max-w-full" aria-hidden />
+      <div className="pointer-events-none absolute left-0 bottom-[20%] h-[350px] w-[350px] sm:h-[500px] sm:w-[500px] rounded-full bg-accent-500/5 blur-[120px] max-w-full" aria-hidden />
 
-      <div className="container-content relative">
+      <div className="container-content relative w-full min-w-0">
         <SectionHeading
           eyebrow="SELECTED WORK"
           title={<>Featured Work</>}

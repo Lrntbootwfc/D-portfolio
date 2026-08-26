@@ -5,8 +5,8 @@ import { Compass } from 'lucide-react';
 
 export default function CurrentlyExploring() {
   return (
-    <section id="exploring" className="section-padding relative">
-      <div className="container-content relative">
+    <section id="exploring" className="section-padding relative w-full max-w-full overflow-hidden">
+      <div className="container-content relative w-full min-w-0">
         <SectionHeading
           eyebrow="CURRENTLY EXPLORING"
           title={<>Active Exploration & Research</>}

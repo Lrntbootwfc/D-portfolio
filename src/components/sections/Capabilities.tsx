@@ -9,11 +9,11 @@ export default function Capabilities() {
   const [activeCard, setActiveCard] = useState<string | null>(null);
 
   return (
-    <section id="capabilities" className="section-padding relative">
+    <section id="capabilities" className="section-padding relative w-full max-w-full overflow-hidden">
       {/* Background ambient glow */}
-      <div className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[450px] w-[800px] rounded-full bg-accent-400/8 blur-[140px]" aria-hidden />
+      <div className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[350px] w-[350px] sm:h-[450px] sm:w-[650px] rounded-full bg-accent-400/8 blur-[120px] max-w-full" aria-hidden />
 
-      <div className="container-content relative">
+      <div className="container-content relative w-full min-w-0">
         <SectionHeading
           eyebrow="CAPABILITIES"
           title={<>What I Build</>}

@@ -5,8 +5,8 @@ import { Calendar, Layers, Database } from 'lucide-react';
 
 export default function Experience() {
   return (
-    <section id="experience" className="section-padding relative">
-      <div className="container-content relative">
+    <section id="experience" className="section-padding relative w-full max-w-full overflow-hidden">
+      <div className="container-content relative w-full min-w-0">
         <SectionHeading
           eyebrow="EXPERIENCE"
           title={<>Professional Experience</>}

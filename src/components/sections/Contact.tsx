@@ -113,12 +113,12 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="section-padding relative border-t border-white/[0.07]">
+    <section id="contact" className="section-padding relative w-full max-w-full overflow-hidden border-t border-white/[0.07]">
       {/* Background ambient lighting */}
-      <div className="pointer-events-none absolute right-[-10%] bottom-[-10%] h-[550px] w-[550px] rounded-full bg-accent-400/8 blur-[160px]" aria-hidden />
-      <div className="pointer-events-none absolute left-[-10%] top-[20%] h-[450px] w-[450px] rounded-full bg-accent-500/8 blur-[150px]" aria-hidden />
+      <div className="pointer-events-none absolute right-0 bottom-[-10%] h-[350px] w-[350px] sm:h-[500px] sm:w-[500px] rounded-full bg-accent-400/8 blur-[120px] max-w-full" aria-hidden />
+      <div className="pointer-events-none absolute left-0 top-[20%] h-[350px] w-[350px] sm:h-[450px] sm:w-[450px] rounded-full bg-accent-500/8 blur-[120px] max-w-full" aria-hidden />
 
-      <div className="container-content relative">
+      <div className="container-content relative w-full min-w-0">
         <div className="grid gap-14 lg:grid-cols-12 lg:gap-16">
           {/* ============================================================
               LEFT COLUMN: HEADLINE, COPY & DIRECT CHANNELS (5 cols)

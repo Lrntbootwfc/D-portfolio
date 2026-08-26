@@ -39,14 +39,14 @@ export default function ProjectDetail() {
   const caseStudy = project.caseStudy;
 
   return (
-    <article className="pt-24 pb-28 relative">
+    <article className="pt-24 pb-28 relative w-full max-w-full overflow-hidden">
       {/* Ambient background glow */}
-      <div className="pointer-events-none absolute left-1/2 top-20 -translate-x-1/2 h-[500px] w-[800px] rounded-full bg-accent-400/8 blur-[160px]" aria-hidden />
+      <div className="pointer-events-none absolute left-1/2 top-20 -translate-x-1/2 h-[350px] w-[350px] sm:h-[500px] sm:w-[650px] rounded-full bg-accent-400/8 blur-[120px] max-w-full" aria-hidden />
 
       {/* ============================================================
           TOP NAVIGATION & HERO HEADER
           ============================================================ */}
-      <div className="container-content relative">
+      <div className="container-content relative w-full min-w-0">
         <Reveal className="flex flex-col gap-6 border-b border-white/[0.08] pb-12">
           <Link
             to="/#work"

@@ -9,7 +9,7 @@
  */
 export default function AtmosphericBackground() {
   return (
-    <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden" aria-hidden>
+    <div className="pointer-events-none fixed inset-0 -z-10 w-full max-w-full overflow-hidden" aria-hidden>
       {/* Base Canvas: Driven by Theme Base Color */}
       <div
         className="absolute inset-0 transition-colors duration-500 ease-out"
@@ -33,31 +33,31 @@ export default function AtmosphericBackground() {
       {/* Ambient Glow Orbs — Layer 2 (Restrained Slow Drift / Breathing Animation) */}
       {/* Top Left Orb */}
       <div
-        className="absolute -top-[10%] left-[-5%] h-[720px] w-[720px] rounded-full blur-[160px] animate-ambient-drift-1 transition-colors duration-500"
+        className="absolute -top-[10%] left-0 h-[400px] w-[400px] sm:h-[720px] sm:w-[720px] rounded-full blur-[120px] sm:blur-[160px] animate-ambient-drift-1 transition-colors duration-500 max-w-full"
         style={{ backgroundColor: 'var(--ambient-orb-1)' }}
       />
 
       {/* Top Right Orb */}
       <div
-        className="absolute top-[15%] -right-[10%] h-[750px] w-[750px] rounded-full blur-[170px] animate-ambient-drift-2 transition-colors duration-500"
+        className="absolute top-[15%] right-0 h-[400px] w-[400px] sm:h-[750px] sm:w-[750px] rounded-full blur-[130px] sm:blur-[170px] animate-ambient-drift-2 transition-colors duration-500 max-w-full"
         style={{ backgroundColor: 'var(--ambient-orb-2)' }}
       />
 
       {/* Mid Left Orb */}
       <div
-        className="absolute top-[48%] -left-[12%] h-[800px] w-[800px] rounded-full blur-[180px] animate-ambient-drift-2 transition-colors duration-500"
+        className="absolute top-[48%] left-0 h-[400px] w-[400px] sm:h-[800px] sm:w-[800px] rounded-full blur-[130px] sm:blur-[180px] animate-ambient-drift-2 transition-colors duration-500 max-w-full"
         style={{ backgroundColor: 'var(--ambient-orb-1)' }}
       />
 
       {/* Mid-Lower Right Orb */}
       <div
-        className="absolute top-[68%] -right-[10%] h-[750px] w-[750px] rounded-full blur-[170px] animate-ambient-drift-1 transition-colors duration-500"
+        className="absolute top-[68%] right-0 h-[400px] w-[400px] sm:h-[750px] sm:w-[750px] rounded-full blur-[130px] sm:blur-[170px] animate-ambient-drift-1 transition-colors duration-500 max-w-full"
         style={{ backgroundColor: 'var(--ambient-orb-2)' }}
       />
 
       {/* Bottom Center Orb */}
       <div
-        className="absolute bottom-[-10%] left-[20%] h-[700px] w-[700px] rounded-full blur-[160px] animate-ambient-pulse transition-colors duration-500"
+        className="absolute bottom-[-10%] left-1/2 -translate-x-1/2 h-[400px] w-[400px] sm:h-[700px] sm:w-[700px] rounded-full blur-[120px] sm:blur-[160px] animate-ambient-pulse transition-colors duration-500 max-w-full"
         style={{ backgroundColor: 'var(--ambient-orb-1)' }}
       />
 

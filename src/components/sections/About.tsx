@@ -27,9 +27,9 @@ export default function About() {
   const currentPhotoSrc = photoCandidates[photoIdx] || '';
 
   return (
-    <section id="about" className="section-padding relative">
-      <div className="container-content relative">
-        <div className="grid gap-12 lg:grid-cols-[1fr_1.4fr] lg:gap-16 lg:items-start">
+    <section id="about" className="section-padding relative w-full max-w-full overflow-hidden">
+      <div className="container-content relative w-full min-w-0">
+        <div className="grid gap-12 lg:grid-cols-[1fr_1.4fr] lg:gap-16 lg:items-start w-full min-w-0">
           {/* Left: Heading + Identity visual container */}
           <div className="flex flex-col gap-6">
             <SectionHeading
