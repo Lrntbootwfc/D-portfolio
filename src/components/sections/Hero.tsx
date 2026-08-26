@@ -128,10 +128,12 @@ export default function Hero() {
                       src={currentPhotoSrc}
                       alt={profile.name}
                       decoding="async"
+                      loading="eager"
+                      fetchPriority="high"
                       onLoad={() => setPhotoLoaded(true)}
                       onError={handleImageError}
-                      className={`h-full w-full object-cover object-center transition-all duration-700 ${
-                        photoLoaded ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
+                      className={`h-full w-full object-cover object-center transition-opacity duration-200 ${
+                        photoLoaded ? 'opacity-100' : 'opacity-0'
                       }`}
                     />
                     {!photoLoaded && (

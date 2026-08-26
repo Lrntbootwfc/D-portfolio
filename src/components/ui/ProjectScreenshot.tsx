@@ -198,9 +198,9 @@ export default function ProjectScreenshot({
         >
           {!hasError && activeSrc ? (
             <>
-              {/* Subtle ambient blur behind image */}
+              {/* Subtle ambient blur behind image on desktop */}
               <div
-                className="absolute inset-0 bg-cover bg-center opacity-25 blur-md scale-110 pointer-events-none"
+                className="hidden sm:block absolute inset-0 bg-cover bg-center opacity-25 blur-md scale-110 pointer-events-none"
                 style={{ backgroundImage: `url(${activeSrc})` }}
                 aria-hidden
               />
@@ -215,7 +215,7 @@ export default function ProjectScreenshot({
                 onError={handleError}
                 className={`relative z-10 h-full w-full ${
                   fit === 'contain' ? 'object-contain p-1.5 sm:p-2.5' : 'object-cover'
-                } transition-all duration-500 group-hover:scale-[1.01] ${
+                } transition-opacity duration-200 ${
                   hasLoaded ? 'opacity-100' : 'opacity-0'
                 }`}
               />
