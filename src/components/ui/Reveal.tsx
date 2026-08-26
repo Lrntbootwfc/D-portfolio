@@ -9,16 +9,26 @@ type RevealProps = {
 };
 
 /**
- * Wraps content and fades/slides it into view on scroll using IntersectionObserver.
- * Respects prefers-reduced-motion via CSS.
+ * High-performance, zero-lag scroll reveal.
+ * Uses generous pre-fetching rootMargin (350px) and instant threshold (0)
+ * so elements are already visible BEFORE they reach the user's viewport.
  */
-export default function Reveal({ children, className = '', delay = 0, as = 'div' }: RevealProps) {
+export default function Reveal({ children, className = '', as = 'div' }: RevealProps) {
   const ref = useRef<HTMLElement>(null);
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState(true);
 
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
+
+    // Immediately mark visible if anywhere near the viewport on mount
+    const rect = el.getBoundingClientRect();
+    if (rect.top <= window.innerHeight + 400) {
+      setVisible(true);
+      return;
+    }
+
+    // Otherwise observe with a 350px pre-trigger buffer
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -28,7 +38,7 @@ export default function Reveal({ children, className = '', delay = 0, as = 'div'
           }
         });
       },
-      { threshold: 0.12, rootMargin: '0px 0px -60px 0px' }
+      { threshold: 0, rootMargin: '350px 0px 150px 0px' }
     );
     observer.observe(el);
     return () => observer.disconnect();
@@ -39,7 +49,6 @@ export default function Reveal({ children, className = '', delay = 0, as = 'div'
     <Tag
       ref={ref as never}
       className={`reveal ${visible ? 'is-visible' : ''} ${className}`}
-      style={{ transitionDelay: `${delay}ms` }}
     >
       {children}
     </Tag>

@@ -27,14 +27,14 @@ export default function Hero() {
   const currentPhotoSrc = photoCandidates[photoIdx] || '';
 
   return (
-    <section className="relative overflow-hidden pt-28 pb-16 lg:min-h-screen lg:flex lg:items-center lg:pt-24 lg:pb-20">
+    <section className="relative overflow-hidden w-full max-w-full pt-24 pb-12 sm:pt-28 sm:pb-16 lg:min-h-screen lg:flex lg:items-center lg:pt-24 lg:pb-20">
       {/* Aurora Ambient Glow Effects */}
       <div
-        className="pointer-events-none absolute -top-40 right-[-10%] h-[600px] w-[600px] rounded-full bg-accent-400/10 blur-[140px]"
+        className="pointer-events-none absolute -top-32 right-0 h-[320px] w-[320px] sm:h-[500px] sm:w-[500px] rounded-full bg-accent-400/10 blur-[120px] max-w-full"
         aria-hidden
       />
       <div
-        className="pointer-events-none absolute bottom-[-15%] left-[-10%] h-[500px] w-[500px] rounded-full bg-accent-500/10 blur-[130px]"
+        className="pointer-events-none absolute bottom-[-10%] left-0 h-[300px] w-[300px] sm:h-[450px] sm:w-[450px] rounded-full bg-accent-500/10 blur-[110px] max-w-full"
         aria-hidden
       />
 
@@ -51,15 +51,12 @@ export default function Hero() {
         aria-hidden
       />
 
-      <div className="container-content relative w-full py-6 lg:py-8">
-        <div className="grid items-center gap-12 lg:grid-cols-[1.2fr_0.8fr] lg:gap-14 xl:gap-20">
+      <div className="container-content relative w-full py-4 sm:py-6 lg:py-8">
+        <div className="grid items-center gap-10 sm:gap-12 lg:grid-cols-[1.2fr_0.8fr] lg:gap-14 xl:gap-20 w-full min-w-0">
           {/* === LEFT SIDE === */}
-          <div className="flex flex-col gap-6 lg:gap-7">
+          <div className="flex flex-col gap-5 sm:gap-6 lg:gap-7 w-full min-w-0">
             {/* Live Status Eyebrow Badge */}
-            <div
-              className="animate-fade-in flex items-center gap-3"
-              style={{ animationDelay: '100ms' }}
-            >
+            <div className="animate-fade-in flex items-center gap-3">
               <div className="flex items-center gap-2 rounded-full border border-white/[0.08] bg-paper-200/50 px-3.5 py-1.5 backdrop-blur-md shadow-sm">
                 <span className="relative flex h-2 w-2">
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent-400 opacity-75" />
@@ -72,26 +69,17 @@ export default function Hero() {
             </div>
 
             {/* Main Headline */}
-            <h1
-              className="animate-fade-up font-display text-display-2xl font-700 text-ink-900 text-balance tracking-tight leading-[1.04]"
-              style={{ animationDelay: '200ms' }}
-            >
+            <h1 className="animate-fade-up font-display text-display-2xl font-700 text-ink-900 text-balance tracking-tight leading-[1.04] w-full">
               Turning ideas into <span className="text-gradient-aurora">useful digital</span> experiences.
             </h1>
 
             {/* Supporting Text */}
-            <p
-              className="animate-fade-up max-w-prose text-base leading-relaxed text-ink-600 text-pretty sm:text-lg lg:text-xl font-300"
-              style={{ animationDelay: '350ms' }}
-            >
+            <p className="animate-fade-up w-full max-w-2xl text-base leading-relaxed text-ink-600 text-pretty sm:text-lg lg:text-xl font-300">
               {hero.supportingText}
             </p>
 
             {/* Capability Line Pill */}
-            <div
-              className="animate-fade-up flex items-center gap-2.5"
-              style={{ animationDelay: '450ms' }}
-            >
+            <div className="animate-fade-up flex items-center gap-2.5">
               <div className="flex items-center gap-2.5 rounded-xl border border-white/[0.08] bg-paper-200/50 px-4 py-2 backdrop-blur-md shadow-sm">
                 <span className="h-1.5 w-1.5 rounded-full bg-gradient-aurora" />
                 <span className="font-mono text-xs font-semibold text-accent-400 tracking-wide">
@@ -101,20 +89,17 @@ export default function Hero() {
             </div>
 
             {/* CTA Buttons */}
-            <div
-              className="animate-fade-up flex flex-wrap items-center gap-4 pt-2"
-              style={{ animationDelay: '550ms' }}
-            >
+            <div className="animate-fade-up flex flex-wrap items-center gap-3 sm:gap-4 pt-1 sm:pt-2">
               <Link
                 to={hero.primaryCta.href}
-                className="group inline-flex items-center gap-2 rounded-full bg-gradient-aurora px-7 py-3.5 text-xs font-semibold tracking-wide text-white transition-all duration-300 hover:opacity-95 cursor-pointer"
+                className="group inline-flex items-center gap-2 rounded-full bg-gradient-aurora px-6 sm:px-7 py-3 sm:py-3.5 text-xs font-semibold tracking-wide text-white transition-all duration-300 hover:opacity-95 cursor-pointer"
               >
                 <span>{hero.primaryCta.label}</span>
                 <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </Link>
               <Link
                 to={hero.secondaryCta.href}
-                className="group inline-flex items-center gap-2 rounded-full border border-white/[0.08] bg-paper-200/50 backdrop-blur-md px-7 py-3.5 text-xs font-medium tracking-wide text-ink-700 transition-all duration-200 hover:border-white/[0.2] hover:bg-paper-200/80 hover:text-ink-900 shadow-sm"
+                className="group inline-flex items-center gap-2 rounded-full border border-white/[0.08] bg-paper-200/50 backdrop-blur-md px-6 sm:px-7 py-3 sm:py-3.5 text-xs font-medium tracking-wide text-ink-700 transition-all duration-200 hover:border-white/[0.2] hover:bg-paper-200/80 hover:text-ink-900 shadow-sm"
               >
                 <span>{hero.secondaryCta.label}</span>
                 <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 text-accent-400" />
@@ -123,14 +108,11 @@ export default function Hero() {
           </div>
 
           {/* === RIGHT SIDE — Photo Container === */}
-          <div
-            className="animate-fade-in-slow relative"
-            style={{ animationDelay: '300ms' }}
-          >
+          <div className="animate-fade-in relative w-full min-w-0">
             <HeroGeometrics />
 
             {/* Photo container with midnight architectural depth */}
-            <div className="relative mx-auto aspect-[4/5] max-w-sm sm:max-w-md lg:mx-0 lg:ml-auto">
+            <div className="relative mx-auto aspect-[4/5] w-full max-w-[280px] sm:max-w-sm md:max-w-md lg:mx-0 lg:ml-auto">
               {/* Dual-accent ambient back glow */}
               <div className="absolute -inset-3 rounded-[2.5rem] bg-gradient-to-tr from-accent-400/15 via-accent-500/10 to-transparent blur-xl" />
               
@@ -201,10 +183,7 @@ export default function Hero() {
         </div>
 
         {/* === Compact Credibility Strip === */}
-        <div
-          className="animate-fade-in mt-14 border-t border-white/[0.08] pt-6 lg:mt-16"
-          style={{ animationDelay: '700ms' }}
-        >
+        <div className="animate-fade-in mt-14 border-t border-white/[0.08] pt-6 lg:mt-16">
           <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-6 sm:gap-y-3">
             {heroCredibility.map((item, i) => (
               <div key={i} className="flex items-center gap-3 sm:gap-x-6">

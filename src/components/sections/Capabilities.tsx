@@ -92,50 +92,58 @@ export default function Capabilities() {
 }
 
 /**
- * 01 — BUILD: Abstract browser/interface wireframe visual
+ * 01 — BUILD: Abstract browser/interface wireframe visual (permanently visible & vibrant)
  */
 function BuildVisual({ isHovered }: { isHovered: boolean }) {
   return (
     <div className="relative flex h-full w-full flex-col justify-between" aria-hidden>
-      {/* Browser bar */}
-      <div className="flex items-center justify-between border-b border-white/[0.08] pb-1.5">
+      {/* Browser top bar */}
+      <div className="flex items-center justify-between border-b border-ink-900/10 dark:border-white/10 pb-1.5">
         <div className="flex items-center gap-1.5">
-          <div className="h-2 w-2 rounded-full bg-white/20" />
-          <div className="h-2 w-2 rounded-full bg-white/20" />
-          <div className="h-2 w-2 rounded-full bg-white/20" />
+          <div className="h-2 w-2 rounded-full bg-rose-400/90 shadow-[0_0_4px_rgba(244,63,94,0.4)]" />
+          <div className="h-2 w-2 rounded-full bg-amber-400/90 shadow-[0_0_4px_rgba(251,191,36,0.4)]" />
+          <div className="h-2 w-2 rounded-full bg-emerald-400/90 shadow-[0_0_4px_rgba(52,211,153,0.4)]" />
         </div>
-        <div
-          className={`h-2 rounded-full bg-white/10 transition-all duration-500 ${
-            isHovered ? 'w-24 bg-accent-400/40' : 'w-16'
-          }`}
-        />
+        <div className="flex items-center gap-1.5 rounded-full bg-accent-500/15 dark:bg-accent-400/20 px-2 py-0.5 border border-accent-400/30">
+          <span className="h-1 w-1 rounded-full bg-accent-400 animate-pulse-soft" />
+          <span
+            className={`h-1.5 rounded-full bg-accent-400/80 transition-all duration-300 ${
+              isHovered ? 'w-20' : 'w-14'
+            }`}
+          />
+        </div>
       </div>
 
       {/* Wireframe interface elements */}
-      <div className="grid grid-cols-3 gap-2 pt-1.5">
+      <div className="grid grid-cols-3 gap-2.5 pt-1.5">
         {/* Left column / sidebar */}
-        <div className="flex flex-col gap-1">
-          <div className="h-2 w-full rounded bg-white/10" />
-          <div className="h-2 w-3/4 rounded bg-white/10" />
-          <div className="h-2 w-1/2 rounded bg-white/10" />
+        <div className="flex flex-col gap-1.5 justify-center">
+          <div className="h-1.5 w-full rounded-full bg-accent-400/40" />
+          <div className="h-1.5 w-4/5 rounded-full bg-ink-900/20 dark:bg-white/25" />
+          <div className="h-1.5 w-3/5 rounded-full bg-ink-900/15 dark:bg-white/20" />
         </div>
 
         {/* Center / main content block */}
         <div className="col-span-2 flex flex-col gap-1.5">
           <div
-            className={`h-6 w-full rounded-xl border border-white/[0.08] bg-paper-100/80 transition-all duration-300 ${
-              isHovered ? 'border-accent-400/50 bg-paper-100 shadow-xs' : ''
-            } flex items-center px-2`}
+            className={`h-6 w-full rounded-xl border border-accent-400/30 bg-paper-100/90 dark:bg-paper-100/60 transition-all duration-300 ${
+              isHovered ? 'border-accent-400/60 shadow-[0_0_12px_var(--glass-glow)]' : 'shadow-xs'
+            } flex items-center px-2.5 justify-between`}
           >
             <div
-              className={`h-1.5 rounded-full bg-white/20 transition-all duration-500 ${
-                isHovered ? 'w-3/4 bg-gradient-aurora' : 'w-1/2'
+              className={`h-2 rounded-full bg-gradient-aurora transition-all duration-300 ${
+                isHovered ? 'w-4/5' : 'w-3/5'
               }`}
             />
+            <span className="h-1.5 w-1.5 rounded-full bg-accent-400" />
           </div>
-          <div className="grid grid-cols-2 gap-1">
-            <div className="h-3 rounded-lg bg-white/[0.08]" />
-            <div className="h-3 rounded-lg bg-white/[0.08]" />
+          <div className="grid grid-cols-2 gap-1.5">
+            <div className="h-3.5 rounded-lg border border-accent-400/20 bg-accent-500/15 dark:bg-accent-400/20 flex items-center px-1.5">
+              <div className="h-1 w-2/3 rounded-full bg-accent-400/70" />
+            </div>
+            <div className="h-3.5 rounded-lg border border-ink-900/10 dark:border-white/10 bg-paper-100/80 dark:bg-paper-100/40 flex items-center px-1.5">
+              <div className="h-1 w-1/2 rounded-full bg-ink-900/25 dark:bg-white/30" />
+            </div>
           </div>
         </div>
       </div>
@@ -144,41 +152,45 @@ function BuildVisual({ isHovered }: { isHovered: boolean }) {
 }
 
 /**
- * 02 — ANALYZE: Abstract chart/dashboard visual
+ * 02 — ANALYZE: Abstract chart/dashboard visual (permanently vibrant)
  */
 function AnalyzeVisual({ isHovered }: { isHovered: boolean }) {
+  const barValues = [
+    { height: 45, color: 'bg-accent-400/50' },
+    { height: 75, color: 'bg-accent-400/80' },
+    { height: 35, color: 'bg-accent-500/50' },
+    { height: 90, color: 'bg-gradient-aurora' },
+    { height: 60, color: 'bg-accent-400/60' },
+    { height: 100, color: 'bg-gradient-aurora' },
+    { height: 70, color: 'bg-accent-400/80' },
+  ];
+
   return (
     <div className="relative flex h-full w-full flex-col justify-between" aria-hidden>
       {/* Top metrics summary line */}
-      <div className="flex items-center justify-between text-[10px] font-mono text-ink-500">
-        <span className="flex items-center gap-1.5">
-          <span className="h-1.5 w-1.5 rounded-full bg-accent-400" />
+      <div className="flex items-center justify-between text-[10px] font-mono">
+        <span className="flex items-center gap-1.5 font-semibold text-ink-700 dark:text-ink-300">
+          <span className="h-1.5 w-1.5 rounded-full bg-accent-400 shadow-[0_0_6px_var(--accent-1)]" />
           METRIC
         </span>
-        <span className={isHovered ? 'text-accent-400 font-semibold' : ''}>
-          {isHovered ? '+34.8%' : 'AVG.DATA'}
+        <span className="text-accent-400 font-bold tracking-tight">
+          +34.8%
         </span>
       </div>
 
       {/* Bar chart + sparkline composition */}
-      <div className="flex items-end justify-between gap-1.5 pt-2 pb-1 border-b border-white/[0.08]">
+      <div className="flex items-end justify-between gap-1.5 pt-1.5 pb-1 border-b border-ink-900/10 dark:border-white/10">
         <div className="flex items-end gap-1.5 flex-1 h-12">
-          {[40, 65, 30, 85, 55, 95, 70].map((val, idx) => {
-            const activeHeight = isHovered ? Math.min(100, val + 10) : val;
+          {barValues.map((bar, idx) => {
+            const activeHeight = isHovered ? Math.min(100, bar.height + 6) : bar.height;
             return (
               <div
                 key={idx}
-                className="flex-1 rounded-t-xs transition-all duration-500 ease-out"
+                className={`flex-1 rounded-t-sm transition-all duration-300 ease-out shadow-xs ${bar.color} ${
+                  idx === 5 || idx === 3 ? 'shadow-[0_0_8px_var(--glass-glow)]' : ''
+                }`}
                 style={{
                   height: `${activeHeight}%`,
-                  backgroundColor:
-                    idx === 5 && isHovered
-                      ? 'var(--accent-1)'
-                      : isHovered
-                      ? idx % 2 === 0
-                        ? 'var(--accent-2)'
-                        : 'rgba(255,255,255,0.25)'
-                      : 'rgba(255,255,255,0.12)',
                 }}
               />
             );
@@ -187,7 +199,7 @@ function AnalyzeVisual({ isHovered }: { isHovered: boolean }) {
       </div>
 
       {/* Axis tags */}
-      <div className="flex justify-between font-mono text-[9px] text-ink-500">
+      <div className="flex justify-between font-mono text-[9px] font-medium text-ink-600 dark:text-ink-400">
         <span>Q1</span>
         <span>Q2</span>
         <span>Q3</span>
@@ -198,7 +210,7 @@ function AnalyzeVisual({ isHovered }: { isHovered: boolean }) {
 }
 
 /**
- * 03 — EXPLORE: Abstract knowledge graph / neural network visual
+ * 03 — EXPLORE: Abstract knowledge graph / neural network visual (permanently vibrant)
  */
 function ExploreVisual({ isHovered }: { isHovered: boolean }) {
   return (
@@ -210,105 +222,120 @@ function ExploreVisual({ isHovered }: { isHovered: boolean }) {
           y1="40"
           x2="80"
           y2="20"
-          stroke={isHovered ? 'var(--accent-1)' : 'rgba(255,255,255,0.15)'}
-          strokeWidth="1"
-          strokeDasharray={isHovered ? '2 2' : 'none'}
-          className="transition-colors duration-300"
+          stroke="var(--accent-1)"
+          strokeWidth="1.5"
+          strokeOpacity={isHovered ? '0.9' : '0.65'}
+          strokeDasharray={isHovered ? '3 2' : 'none'}
+          className="transition-all duration-300"
         />
         <line
           x1="30"
           y1="40"
           x2="80"
           y2="60"
-          stroke={isHovered ? 'var(--accent-2)' : 'rgba(255,255,255,0.1)'}
-          strokeWidth="1"
-          className="transition-colors duration-300"
+          stroke="var(--accent-2)"
+          strokeWidth="1.25"
+          strokeOpacity={isHovered ? '0.8' : '0.55'}
+          className="transition-all duration-300"
         />
         <line
           x1="80"
           y1="20"
           x2="140"
           y2="30"
-          stroke={isHovered ? 'var(--accent-1)' : 'rgba(255,255,255,0.15)'}
-          strokeWidth="1.2"
-          className="transition-colors duration-300"
+          stroke="var(--accent-1)"
+          strokeWidth="1.75"
+          strokeOpacity={isHovered ? '1' : '0.75'}
+          className="transition-all duration-300"
         />
         <line
           x1="80"
           y1="60"
           x2="140"
           y2="50"
-          stroke={isHovered ? 'var(--accent-2)' : 'rgba(255,255,255,0.1)'}
-          strokeWidth="1"
-          className="transition-colors duration-300"
+          stroke="var(--accent-2)"
+          strokeWidth="1.25"
+          strokeOpacity={isHovered ? '0.8' : '0.55'}
+          className="transition-all duration-300"
         />
         <line
           x1="140"
           y1="30"
           x2="180"
           y2="40"
-          stroke={isHovered ? 'var(--accent-1)' : 'rgba(255,255,255,0.15)'}
-          strokeWidth="1"
-          className="transition-colors duration-300"
+          stroke="var(--accent-1)"
+          strokeWidth="1.75"
+          strokeOpacity={isHovered ? '1' : '0.75'}
+          className="transition-all duration-300"
         />
         <line
           x1="140"
           y1="50"
           x2="180"
           y2="40"
-          stroke={isHovered ? 'var(--accent-2)' : 'rgba(255,255,255,0.1)'}
-          strokeWidth="1"
-          className="transition-colors duration-300"
+          stroke="var(--accent-2)"
+          strokeWidth="1.25"
+          strokeOpacity={isHovered ? '0.8' : '0.55'}
+          className="transition-all duration-300"
         />
         <line
           x1="80"
           y1="20"
           x2="80"
           y2="60"
-          stroke={isHovered ? 'var(--accent-1)' : 'rgba(255,255,255,0.08)'}
-          strokeWidth="0.8"
+          stroke="var(--accent-1)"
+          strokeWidth="1"
+          strokeOpacity="0.4"
         />
         <line
           x1="140"
           y1="30"
           x2="140"
           y2="50"
-          stroke={isHovered ? 'var(--accent-2)' : 'rgba(255,255,255,0.08)'}
-          strokeWidth="0.8"
+          stroke="var(--accent-2)"
+          strokeWidth="1"
+          strokeOpacity="0.4"
         />
 
-        {/* Nodes */}
-        <circle cx="30" cy="40" r="3.5" fill={isHovered ? '#FFFFFF' : 'rgba(255,255,255,0.4)'} />
-        <circle cx="80" cy="20" r="4" fill={isHovered ? 'var(--accent-1)' : 'rgba(255,255,255,0.3)'} />
-        <circle cx="80" cy="60" r="3" fill={isHovered ? '#FFFFFF' : 'rgba(255,255,255,0.4)'} />
+        {/* Nodes with rich glow */}
+        <circle cx="30" cy="40" r="4" fill="var(--accent-1)" />
+        <circle cx="30" cy="40" r="6" stroke="var(--accent-1)" strokeWidth="1" strokeOpacity="0.4" />
+
+        <circle cx="80" cy="20" r="4.5" fill="var(--accent-1)" />
+        <circle cx="80" cy="20" r="7" stroke="var(--accent-1)" strokeWidth="1" strokeOpacity="0.3" />
+
+        <circle cx="80" cy="60" r="3.5" fill="var(--accent-2)" />
+
         <circle
           cx="140"
           cy="30"
-          r={isHovered ? '5' : '4'}
-          fill={isHovered ? 'var(--accent-2)' : 'rgba(255,255,255,0.3)'}
+          r={isHovered ? '6' : '5'}
+          fill="var(--accent-1)"
           className="transition-all duration-300"
         />
-        <circle cx="140" cy="50" r="3.5" fill={isHovered ? '#FFFFFF' : 'rgba(255,255,255,0.4)'} />
+        <circle cx="140" cy="30" r="9" stroke="var(--accent-1)" strokeWidth="1.2" strokeOpacity="0.5" />
+
+        <circle cx="140" cy="50" r="4" fill="var(--accent-2)" />
+
         <circle
           cx="180"
           cy="40"
-          r={isHovered ? '4.5' : '3.5'}
-          fill={isHovered ? 'var(--accent-1)' : 'rgba(255,255,255,0.3)'}
+          r={isHovered ? '5.5' : '4.5'}
+          fill="var(--accent-1)"
           className="transition-all duration-300"
         />
+        <circle cx="180" cy="40" r="8" stroke="var(--accent-1)" strokeWidth="1" strokeOpacity="0.4" />
 
-        {/* Orbit pulse when hovered */}
-        {isHovered && (
-          <circle
-            cx="140"
-            cy="30"
-            r="9"
-            stroke="var(--accent-2)"
-            strokeWidth="0.75"
-            strokeOpacity="0.5"
-            className="animate-ping origin-center"
-          />
-        )}
+        {/* Pulse ring */}
+        <circle
+          cx="140"
+          cy="30"
+          r="12"
+          stroke="var(--accent-1)"
+          strokeWidth="1"
+          strokeOpacity="0.6"
+          className="animate-pulse origin-center"
+        />
       </svg>
     </div>
   );

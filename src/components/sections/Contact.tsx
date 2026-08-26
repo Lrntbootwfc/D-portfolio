@@ -426,13 +426,13 @@ export default function Contact() {
                     />
                   </div>
 
-                  {/* FIELD 5: What budget can you afford? (Dropdown) */}
+                  {/* FIELD 5: What budget do you have in mind? (Dropdown) */}
                   <div className="flex flex-col gap-2">
                     <label
                       htmlFor="project-budget"
                       className="font-mono text-xs font-semibold text-ink-800 uppercase tracking-wider"
                     >
-                      What budget can you afford?
+                     What budget do you have in mind?
                     </label>
                     <div className="relative">
                       <select
