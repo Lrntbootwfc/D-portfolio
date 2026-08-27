@@ -1,8 +1,22 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="default">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      (function() {
+        try {
+          var saved = localStorage.getItem('portfolio_theme_v2');
+          if (saved) {
+            document.documentElement.setAttribute('data-theme', saved);
+          } else {
+            document.documentElement.setAttribute('data-theme', 'default');
+          }
+        } catch (e) {
+          document.documentElement.setAttribute('data-theme', 'default');
+        }
+      })();
+    </script>
     <title>Divya Sharma — Developer & Digital Solutions Builder</title>
     <meta name="description" content="Divya Sharma — Developer & Digital Solutions Builder. Build websites. Analyze data. Build intelligent systems." />
     <meta property="og:title" content="Divya Sharma — Developer & Digital Solutions Builder" />
