@@ -1,5 +1,3 @@
-import { GOOGLE_DRIVE_FILE_IDS, getDrivePdfUrl } from './driveAssets';
-
 /**
  * Central content file — edit portfolio copy here without touching components.
  * All placeholders are clearly marked; replace with real assets over time.
@@ -13,12 +11,7 @@ export const profile = {
   email: 'divyasharmagdscoist@gmail.com', // Primary contact email
   githubUsername: 'Lrntbootwfc',
   linkedinUsername: 'divya-sharma6467',
-  resumeUrl:
-    GOOGLE_DRIVE_FILE_IDS['Divya_Sharma_Resume.pdf'] || GOOGLE_DRIVE_FILE_IDS['resume.pdf']
-      ? getDrivePdfUrl(
-          GOOGLE_DRIVE_FILE_IDS['Divya_Sharma_Resume.pdf'] || GOOGLE_DRIVE_FILE_IDS['resume.pdf']
-        )
-      : '/Divya_Sharma_Resume.pdf',
+  resumeUrl: '/Divya_Sharma_Resume.pdf',
   socials: [
     {
       label: 'Email',
@@ -707,3 +700,45 @@ export const about = {
     'Collaborative Delivery for Real-World Businesses',
   ],
 };
+
+export type TestimonialItem = {
+  id: string;
+  name: string;
+  role: string;
+  relationship: string;
+  avatarText: string;
+  verified: boolean;
+  highlightWords: string[];
+  paragraphs: string[];
+  skillsHighlighted: string[];
+  date: string;
+};
+
+export const testimonials: TestimonialItem[] = [
+  {
+    id: 'amisha-kumari',
+    name: 'Amisha Kumari',
+    role: 'Project Collaborator & Teammate',
+    relationship: 'Worked together on multiple projects',
+    avatarText: 'AK',
+    verified: true,
+    highlightWords: [
+      'very good understanding of projects',
+      'strong technical understanding and a practical approach to solving problems',
+      'communication and soft skills',
+      'teamwork, understanding, and ability to take responsibility',
+    ],
+    paragraphs: [
+      'I’ve had the opportunity to work with Divya on several projects, and she has always been a great team member. She has a *very good understanding of projects* and explains concepts clearly and confidently.',
+      'She has a *strong technical understanding and a practical approach to solving problems*, which reflects in the projects she has worked on. She also has excellent *communication and soft skills* and knows how to work with and handle different people.',
+      'Having worked with her on multiple projects, I’ve seen her *teamwork, understanding, and ability to take responsibility* firsthand. Overall, Divya is a skilled, reliable, and hardworking person with great potential for growth.',
+    ],
+    skillsHighlighted: [
+      'Technical Problem Solving',
+      'Clear Communication',
+      'Team Leadership',
+      'Reliability & Ownership',
+    ],
+    date: 'February 2025',
+  },
+];

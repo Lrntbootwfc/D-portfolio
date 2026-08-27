@@ -33,6 +33,9 @@ export default function Footer() {
             <a href="/#about" className="transition-colors hover:text-accent-400">
               About
             </a>
+            <a href="/#testimonials" className="transition-colors hover:text-accent-400">
+              Feedback
+            </a>
             <a href="/#contact" className="transition-colors hover:text-accent-400">
               Contact
             </a>

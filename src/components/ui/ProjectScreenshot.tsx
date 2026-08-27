@@ -1,6 +1,5 @@
 import { useState, useEffect, type MouseEvent } from 'react';
 import { Maximize2, Image as ImageIcon, ZoomIn, ZoomOut, RotateCcw, X } from 'lucide-react';
-import { resolveAssetCandidates } from '@/data/driveAssets';
 
 interface ProjectScreenshotProps {
   candidates?: string[];
@@ -36,60 +35,27 @@ export default function ProjectScreenshot({
   const [isZoomed, setIsZoomed] = useState<boolean>(false);
   const [zoomScale, setZoomScale] = useState<number>(1);
 
-  // Generate full candidate list (with Drive URLs first, then multiple standard extensions and path prefixes)
+  // Generate full candidate list with standard local static paths
   const allCandidates: string[] = [];
 
-  // Add drive candidate URLs first
-  if (src) {
-    allCandidates.push(...resolveAssetCandidates(src));
-  }
-  candidates.forEach((name) => {
-    if (name) {
-      allCandidates.push(...resolveAssetCandidates(name));
-    }
-  });
+  const rawNames = [src, ...candidates].filter((s): s is string => Boolean(s));
 
-  if (src) {
-    allCandidates.push(src);
-    try {
-      allCandidates.push(encodeURI(src));
-    } catch {
-      // ignore
-    }
-  }
-
-  candidates.forEach((name) => {
-    if (!name) return;
-    allCandidates.push(name);
-    try {
-      allCandidates.push(encodeURI(name));
-    } catch {
-      // ignore
-    }
-
-    const cleanName = name.replace(/^\/+/, '');
+  rawNames.forEach((raw) => {
+    const cleanName = raw.replace(/^\/+/, '').replace(/^images\//, '');
     const cleanNoExt = cleanName.replace(/\.[^/.]+$/, '');
 
-    const prefixes = ['images/', 'projects/', 'assets/images/', '', 'assets/'];
-    const extensions = ['.png', '.jpg', '.jpeg', '.webp', '.svg'];
+    const localPaths = [
+      `/images/${cleanName}`,
+      `/${cleanName}`,
+      `/images/${encodeURIComponent(cleanName)}`,
+      raw.startsWith('/') ? raw : `/${raw}`,
+      `/images/${cleanNoExt}.png`,
+      `/images/${cleanNoExt}.jpg`,
+      `/images/${cleanNoExt}.jpeg`,
+      `/images/${cleanNoExt}.webp`,
+    ];
 
-    prefixes.forEach((p) => {
-      allCandidates.push(`/${p}${cleanName}`);
-      try {
-        allCandidates.push(encodeURI(`/${p}${cleanName}`));
-      } catch {
-        // ignore
-      }
-
-      extensions.forEach((ext) => {
-        allCandidates.push(`/${p}${cleanNoExt}${ext}`);
-        try {
-          allCandidates.push(encodeURI(`/${p}${cleanNoExt}${ext}`));
-        } catch {
-          // ignore
-        }
-      });
-    });
+    allCandidates.push(...localPaths);
   });
 
   const uniqueCandidates = Array.from(new Set(allCandidates));

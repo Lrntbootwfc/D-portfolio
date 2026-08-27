@@ -11,10 +11,11 @@ const navLinks = [
   { label: 'Work', href: '/#work' },
   { label: 'Experience', href: '/#experience' },
   { label: 'About', href: '/#about' },
+  { label: 'Feedback', href: '/#testimonials' },
   { label: 'Contact', href: '/#contact' },
 ];
 
-const sectionIds = ['work', 'experience', 'about', 'contact'];
+const sectionIds = ['work', 'experience', 'about', 'testimonials', 'contact'];
 
 export default function Header() {
   const scrolled = useScrollPosition(20);

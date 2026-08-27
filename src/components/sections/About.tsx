@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { about, profile, hero } from '@/data/portfolio';
-import { resolveAssetCandidates } from '@/data/driveAssets';
 import Reveal from '@/components/ui/Reveal';
 import SectionHeading from '@/components/ui/SectionHeading';
 import { CheckCircle2 } from 'lucide-react';
@@ -10,11 +9,14 @@ export default function About() {
   const [photoLoaded, setPhotoLoaded] = useState(false);
   const [allFailed, setAllFailed] = useState(false);
 
-  const baseCandidates = hero.photoCandidates || ['pro pic.png', 'pro pic.jpg', 'images/pro pic.png'];
-  const photoCandidates = Array.from(new Set([
-    ...resolveAssetCandidates('pro pic.png'),
-    ...baseCandidates.map((c) => c.startsWith('http') || c.startsWith('/') ? c : `/${c}`),
-  ]));
+  const photoCandidates = [
+    '/images/pro pic.png',
+    '/pro pic.png',
+    '/images/pro%20pic.png',
+    '/pro%20pic.png',
+    '/images/pro-pic.png',
+    '/images/propic.png',
+  ];
 
   const handleImageError = () => {
     if (photoIdx < photoCandidates.length - 1) {

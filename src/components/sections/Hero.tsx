@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowUpRight, ArrowDown } from 'lucide-react';
 import { hero, heroCredibility, profile } from '@/data/portfolio';
-import { resolveAssetCandidates } from '@/data/driveAssets';
 import HeroGeometrics from './HeroGeometrics';
 
 export default function Hero() {
@@ -10,11 +9,14 @@ export default function Hero() {
   const [photoLoaded, setPhotoLoaded] = useState(false);
   const [allFailed, setAllFailed] = useState(false);
 
-  const baseCandidates = hero.photoCandidates || ['pro pic.png', 'pro pic.jpg', 'images/pro pic.png'];
-  const photoCandidates = Array.from(new Set([
-    ...resolveAssetCandidates('pro pic.png'),
-    ...baseCandidates.map((c) => c.startsWith('http') || c.startsWith('/') ? c : `/${c}`),
-  ]));
+  const photoCandidates = [
+    '/images/pro pic.png',
+    '/pro pic.png',
+    '/images/pro%20pic.png',
+    '/pro%20pic.png',
+    '/images/pro-pic.png',
+    '/images/propic.png',
+  ];
 
   const handleImageError = () => {
     if (photoIdx < photoCandidates.length - 1) {
