@@ -41,20 +41,28 @@ export default function ThemeSwitcher({ variant = 'navbar' }: ThemeSwitcherProps
 
   const families: { id: ThemeFamily; name: string; shortName: string; color1: string; color2: string; mood: string }[] = [
     {
+      id: 'default',
+      name: 'Basic / Midnight Amber',
+      shortName: 'Basic',
+      color1: '#F59E0B',
+      color2: '#FB923C',
+      mood: 'Obsidian Slate & Warm Amber Glow (Default)',
+    },
+    {
       id: 'pink',
       name: 'Pink Neumorphic',
       shortName: 'Pink',
       color1: '#FF2B79',
       color2: '#FF5E97',
-      mood: 'Signature Soft Neumorphic & Hot Pink',
+      mood: 'Signature Soft Tactile 3D Neumorphic',
     },
     {
       id: 'navy',
-      name: 'Navy & Coral',
+      name: 'Navy & Coral Glass',
       shortName: 'Navy',
       color1: '#4F75FF',
       color2: '#F28B82',
-      mood: 'Ice Blue & Warm Coral Glassmorphic',
+      mood: 'Midnight Deep Blue & Coral Glassmorphic',
     },
   ];
 
@@ -99,7 +107,7 @@ export default function ThemeSwitcher({ variant = 'navbar' }: ThemeSwitcherProps
             />
           </span>
           <span className="hidden sm:inline font-sans text-xs font-semibold tracking-wide text-ink-800">
-            {family === 'pink' ? 'Pink' : 'Navy'}
+            {family === 'default' ? 'Basic' : family === 'pink' ? 'Pink' : 'Navy'}
           </span>
           <Palette className="h-3 w-3 text-accent-400 transition-transform group-hover:rotate-12 shrink-0 ml-0.5" />
         </button>

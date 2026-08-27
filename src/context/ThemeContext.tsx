@@ -1,8 +1,8 @@
 import { createContext, useContext, useEffect, useState, ReactNode } from 'react';
 
-export type ThemeFamily = 'pink' | 'navy';
+export type ThemeFamily = 'default' | 'pink' | 'navy';
 export type ThemeMode = 'light' | 'dark';
-export type ThemeId = 'pink-neumorphic' | 'pink-dark-neumorphic' | 'navy-light' | 'navy';
+export type ThemeId = 'default' | 'default-light' | 'pink-neumorphic' | 'pink-dark-neumorphic' | 'navy-light' | 'navy';
 
 export interface ThemeOption {
   id: ThemeId;
@@ -19,6 +19,32 @@ export interface ThemeOption {
 }
 
 export const THEMES: ThemeOption[] = [
+  {
+    id: 'default',
+    name: 'Midnight Amber (Default)',
+    shortName: 'Default Dark',
+    mood: 'Obsidian Slate & Warm Amber Accent',
+    family: 'default',
+    mode: 'dark',
+    color1: '#F59E0B', // Amber
+    color2: '#FB923C', // Warm Orange
+    bgBase: '#0F1319',
+    bgSupporting: '#161B24',
+    gradientText: 'Amber → Warm Orange',
+  },
+  {
+    id: 'default-light',
+    name: 'Editorial Slate (Light)',
+    shortName: 'Default Light',
+    mood: 'Clean Paper & Amber Accent',
+    family: 'default',
+    mode: 'light',
+    color1: '#D97706', // Warm Amber
+    color2: '#EA580C', // Orange
+    bgBase: '#F8F9FA',
+    bgSupporting: '#EDEFF2',
+    gradientText: 'Amber → Slate',
+  },
   {
     id: 'pink-neumorphic',
     name: 'Pink Neumorphic (Light)',
@@ -49,11 +75,11 @@ export const THEMES: ThemeOption[] = [
     id: 'navy-light',
     name: 'Navy & Coral (Light)',
     shortName: 'Navy Light',
-    mood: 'Fresh Ice Blue & Coral',
+    mood: 'Fresh Ice Blue & Coral Glass',
     family: 'navy',
     mode: 'light',
-    color1: '#4F75FF', // Ice Navy Blue
-    color2: '#FF7369', // Vibrant Coral
+    color1: '#3B66FF', // Ice Navy Blue
+    color2: '#FF5A4E', // Vibrant Coral
     bgBase: '#F0F4F9',
     bgSupporting: '#E2E9F3',
     gradientText: 'Navy Blue → Coral',
@@ -97,7 +123,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
         return saved;
       }
     }
-    return 'pink-neumorphic'; // Default to Soft Neumorphic Pink
+    return 'default'; // Default to user's Midnight Amber theme
   });
 
   const setTheme = (newTheme: ThemeId) => {
@@ -123,7 +149,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
   };
 
   const setMode = (newMode: ThemeMode) => {
-    // Keep current family (pink/navy) when toggling mode
+    // Keep current family (default/pink/navy) when toggling mode
     const target = THEMES.find((t) => t.family === family && t.mode === newMode);
     if (target) setTheme(target.id);
   };
@@ -158,3 +184,4 @@ export function useTheme() {
   }
   return context;
 }
+

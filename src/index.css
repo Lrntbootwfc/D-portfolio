@@ -5,13 +5,133 @@
    ========================================================================== */
 
 :root,
-[data-theme="pink-neumorphic"],
-[data-theme="plum"] {
-  /* THEME 1: SOFT NEUMORPHIC PINK (LIGHT MODE) */
+[data-theme="default"] {
+  /* THEME 1 (DEFAULT): CLEAN MIDNIGHT OBSIDIAN & WARM AMBER — NO EXCESSIVE EFFECTS */
+  --bg-base: #0F1319;
+  --bg-supporting: #161B24;
+  --bg-deep: #0A0D12;
+  --bg-surface: #1B222E;
+  --bg-hover: #222B3A;
+
+  --text-primary: #F8FAFC;
+  --text-heading: #EDEFE8;
+  --text-body: #CBD5E1;
+  --text-muted: #94A3B8;
+  --text-subtle: #64748B;
+  --text-faint: #475569;
+
+  /* Accent 1: Amber 400 | Accent 2: Warm Amber 500 */
+  --accent-1: #F59E0B;
+  --accent-2: #FB923C;
+  --accent-1-rgb: 245, 158, 11;
+  --accent-2-rgb: 251, 146, 60;
+
+  --gradient-primary: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+  --gradient-text: linear-gradient(135deg, #F8FAFC 0%, #F8FAFC 100%); /* Pure crisp text in basic theme */
+  --gradient-badge: rgba(245, 158, 11, 0.1);
+
+  /* Clean, Flat, Precise Card & Border System without heavy glow or backdrop-filter */
+  --glass-bg: #161B24;
+  --glass-card-bg: #161B24;
+  --glass-subtle-bg: #0F1319;
+  --glass-pill-bg: #1B222E;
+  --glass-nav-bg: rgba(15, 19, 25, 0.95);
+  --glass-input-bg: #0A0D12;
+  --glass-bg-hover: #1E2633;
+
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-border-subtle: rgba(255, 255, 255, 0.05);
+  --glass-border-hover: rgba(245, 158, 11, 0.4);
+  --glass-input-border: rgba(255, 255, 255, 0.1);
+  --glass-highlight: transparent;
+  --glass-glow: transparent;
+
+  /* Clean, subtle, professional shadows without exaggerated glows */
+  --neu-shadow-card: 0 4px 12px rgba(0, 0, 0, 0.3);
+  --neu-shadow-card-hover: 0 8px 20px rgba(0, 0, 0, 0.45);
+  --neu-shadow-panel: 0 2px 8px rgba(0, 0, 0, 0.25);
+  --neu-shadow-pill: 0 1px 3px rgba(0, 0, 0, 0.2);
+  --neu-shadow-pill-hover: 0 2px 6px rgba(0, 0, 0, 0.3);
+  --neu-shadow-input: inset 0 1px 2px rgba(0, 0, 0, 0.3);
+  --neu-shadow-input-focus: 0 0 0 2px rgba(245, 158, 11, 0.25);
+  --neu-shadow-nav: 0 2px 10px rgba(0, 0, 0, 0.35);
+  --neu-btn-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  --neu-btn-shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.35);
+
+  /* Restrained, Clean Ambient Lighting (Zero distracting orbs) */
+  --ambient-orb-1: transparent;
+  --ambient-orb-2: transparent;
+  --ambient-mesh-1: rgba(245, 158, 11, 0.03);
+  --ambient-mesh-2: rgba(251, 146, 60, 0.02);
+  --ambient-blur: 0px;
+}
+
+[data-theme="default-light"] {
+  /* THEME 1 LIGHT COMPANION: CLEAN EDITORIAL SLATE & AMBER — NO EXCESSIVE EFFECTS */
+  --bg-base: #F8F9FA;
+  --bg-supporting: #F1F3F5;
+  --bg-deep: #E9ECEF;
+  --bg-surface: #FFFFFF;
+  --bg-hover: #F8F9FA;
+
+  --text-primary: #0F172A;
+  --text-heading: #0A0D12;
+  --text-body: #334155;
+  --text-muted: #64748B;
+  --text-subtle: #94A3B8;
+  --text-faint: #CBD5E1;
+
+  /* Accent 1: Warm Amber | Accent 2: Bright Orange */
+  --accent-1: #D97706;
+  --accent-2: #EA580C;
+  --accent-1-rgb: 217, 119, 6;
+  --accent-2-rgb: 234, 88, 12;
+
+  --gradient-primary: linear-gradient(135deg, #D97706 0%, #B45309 100%);
+  --gradient-text: linear-gradient(135deg, #0F172A 0%, #0F172A 100%);
+  --gradient-badge: rgba(217, 119, 6, 0.08);
+
+  /* Clean Paper Surfaces */
+  --glass-bg: #FFFFFF;
+  --glass-card-bg: #FFFFFF;
+  --glass-subtle-bg: #F1F3F5;
+  --glass-pill-bg: #FFFFFF;
+  --glass-nav-bg: rgba(248, 249, 250, 0.95);
+  --glass-input-bg: #F1F3F5;
+  --glass-bg-hover: #F8F9FA;
+
+  --glass-border: rgba(0, 0, 0, 0.08);
+  --glass-border-subtle: rgba(0, 0, 0, 0.05);
+  --glass-border-hover: rgba(217, 119, 6, 0.4);
+  --glass-input-border: rgba(0, 0, 0, 0.1);
+  --glass-highlight: transparent;
+  --glass-glow: transparent;
+
+  --neu-shadow-card: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+  --neu-shadow-card-hover: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --neu-shadow-panel: 0 1px 3px rgba(0, 0, 0, 0.05);
+  --neu-shadow-pill: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --neu-shadow-pill-hover: 0 2px 4px rgba(0, 0, 0, 0.06);
+  --neu-shadow-input: inset 0 1px 2px rgba(0, 0, 0, 0.05);
+  --neu-shadow-input-focus: 0 0 0 2px rgba(217, 119, 6, 0.2);
+  --neu-shadow-nav: 0 1px 4px rgba(0, 0, 0, 0.05);
+  --neu-btn-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  --neu-btn-shadow-hover: 0 4px 8px rgba(0, 0, 0, 0.12);
+
+  --ambient-orb-1: transparent;
+  --ambient-orb-2: transparent;
+  --ambient-mesh-1: transparent;
+  --ambient-mesh-2: transparent;
+  --ambient-blur: 0px;
+}
+
+[data-theme="pink-neumorphic"] {
+  /* THEME 2: SOFT NEUMORPHIC PINK (LIGHT MODE) */
   --bg-base: #EEF2F6;
   --bg-supporting: #E2E8F0;
   --bg-deep: #D8E2EC;
   --bg-surface: #F5F8FB;
+  --bg-hover: #F5F8FB;
 
   --text-primary: #1E293B;
   --text-heading: #0F172A;
@@ -468,29 +588,41 @@
 
 .glass-panel {
   background: var(--glass-card-bg);
-  backdrop-filter: blur(20px) saturate(135%);
-  -webkit-backdrop-filter: blur(20px) saturate(135%);
   border: 1px solid var(--glass-border);
   box-shadow: var(--neu-shadow-panel);
   transition: background 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
 }
 
+[data-theme="navy"] .glass-panel,
+[data-theme="navy-light"] .glass-panel,
+[data-theme="pink-neumorphic"] .glass-panel,
+[data-theme="pink-dark-neumorphic"] .glass-panel {
+  backdrop-filter: blur(20px) saturate(135%);
+  -webkit-backdrop-filter: blur(20px) saturate(135%);
+}
+
 .glass-nav {
   background: var(--glass-nav-bg);
-  backdrop-filter: blur(24px) saturate(140%);
-  -webkit-backdrop-filter: blur(24px) saturate(140%);
   border-bottom: 1px solid var(--glass-border);
   box-shadow: var(--neu-shadow-nav);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   transition: background 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
 }
 
 .glass-card {
   background: var(--glass-card-bg);
-  backdrop-filter: blur(20px) saturate(135%);
-  -webkit-backdrop-filter: blur(20px) saturate(135%);
   border: 1px solid var(--glass-border);
   box-shadow: var(--neu-shadow-card);
   transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-theme="navy"] .glass-card,
+[data-theme="navy-light"] .glass-card,
+[data-theme="pink-neumorphic"] .glass-card,
+[data-theme="pink-dark-neumorphic"] .glass-card {
+  backdrop-filter: blur(20px) saturate(135%);
+  -webkit-backdrop-filter: blur(20px) saturate(135%);
 }
 
 .glass-card:hover {
@@ -501,11 +633,17 @@
 
 .glass-pill {
   background: var(--glass-pill-bg);
-  backdrop-filter: blur(14px) saturate(125%);
-  -webkit-backdrop-filter: blur(14px) saturate(125%);
   border: 1px solid var(--glass-border);
   box-shadow: var(--neu-shadow-pill);
   transition: all 0.3s ease;
+}
+
+[data-theme="navy"] .glass-pill,
+[data-theme="navy-light"] .glass-pill,
+[data-theme="pink-neumorphic"] .glass-pill,
+[data-theme="pink-dark-neumorphic"] .glass-pill {
+  backdrop-filter: blur(14px) saturate(125%);
+  -webkit-backdrop-filter: blur(14px) saturate(125%);
 }
 
 .glass-pill:hover {
