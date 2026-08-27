@@ -10,12 +10,8 @@ export default function Hero() {
   const [allFailed, setAllFailed] = useState(false);
 
   const photoCandidates = [
-    '/images/pro pic.png',
-    '/pro pic.png',
-    '/images/pro%20pic.png',
-    '/pro%20pic.png',
-    '/images/pro-pic.png',
     '/images/propic.png',
+    '/images/propic.jpg'
   ];
 
   const handleImageError = () => {
